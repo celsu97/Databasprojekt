@@ -45,8 +45,8 @@ await using var db = new ShopContext1();
                 Status = "Ny",
                 OrderRows = new List<OrderRow>
                 {
-                    new OrderRow { ProductId = "1", Quantity = 2, UnitPrice = 100 },
-                    new OrderRow { ProductId = "2", Quantity = 1, UnitPrice = 200 }
+                    new OrderRow { ProductId = 1, Quantity = 2, UnitPrice = 100 },
+                    new OrderRow { ProductId = 2, Quantity = 1, UnitPrice = 200 }
                 }
             }
         );

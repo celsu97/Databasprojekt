@@ -15,7 +15,8 @@ namespace ConsoleApp6.Models
 
         [Required, StringLength(50)]
         public string? Status { get; set; }
-        public decimal TotalAmount => OrderRows.Sum(or => or.UnitPrice * or.Quantity);
+        
+        public decimal TotalAmount {get; set;}
 
         // Navigation
         public Customer? Customer { get; set; }

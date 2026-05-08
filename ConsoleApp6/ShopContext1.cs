@@ -3,55 +3,61 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using ConsoleApp6.Models;
 
+/// <summary>
+/// Represents the Entity Framework Core database context for the shop application.
+/// </summary>
+
 public class ShopContext1 : DbContext
 {
-    //Db<Category> mappar till tabellen category i databasen
+    //Db<Category> maps to table category in database
     public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderRow> OrderRows => Set<OrderRow>();
     public DbSet<Product> Products => Set<Product>();
+    public DbSet<Category> Categories => Set<Category>();
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        // säger vart databasen finns
+        // Tells where the database is
         var dbPath = Path.Combine(AppContext.BaseDirectory, "shop.db");
         optionsBuilder.UseSqlite ($"Filename={dbPath}");
     }
 
-    //OnModelCreating används för att finjustera modellen
+    /// <summary>
+    /// OnModelCreating used to adjust models
+    /// </summary>
+    /// <param name="modelBuilder"></param>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Customer 
         modelBuilder.Entity<Customer>(e => 
        {
-        // Sätter PK
+        // Puts PK
         e.HasKey(c => c.CustomerId);
         
-        // Säkerställer samma regler som data annotations (required, MaxLength)
+        // Ensures same rules as data annotations (required, MaxLength)
         e.Property(x => x.Name)
             .IsRequired()
             .HasMaxLength(100);
 
         e.Property(x => x.Email)
             .IsRequired()
-            .HasMaxLength(250);
+            .HasMaxLength(100);
         
         e.HasIndex(x => x.Email)
             .IsUnique();
         
         e.Property(x => x.City)
             .HasMaxLength(250);
-
-        // Kommer tillbaka till detta
-        e.HasMany(c => c.Orders);
-
     });
+        
+        // Order
         modelBuilder.Entity<Order>(e => 
         {
             //PK
             e.HasKey(o => o.OrderId);
 
-            e.Property(x => x.OrderDate)
-                .IsRequired();
+            e.Property(x => x.OrderDate);
 
             e.Property(x => x.Status)
                 .IsRequired()
@@ -66,7 +72,8 @@ public class ShopContext1 : DbContext
                 .HasForeignKey(or => or.CustomerId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
-
+        
+        // Order Row
         modelBuilder.Entity<OrderRow>(e => 
         {
             //PK
@@ -77,19 +84,18 @@ public class ShopContext1 : DbContext
             e.Property(x => x.UnitPrice)
                 .IsRequired();
             
-            // Relations: Order 1 - N OrderRows
             e.HasOne(or => or.Order)
                 .WithMany(or => or.OrderRows)
                 .HasForeignKey(or => or.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            // Product 1 - M OrderRows, 
+            
             e.HasOne(p => p.Product)
-                .WithMany() // Ingen navigation property i Product-klassen
+                .WithMany() 
                 .HasForeignKey(or => or.ProductId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
-
+        
+        // Product
         modelBuilder.Entity<Product>(e => 
         {
             //PK
@@ -99,14 +105,25 @@ public class ShopContext1 : DbContext
             e.Property(x => x.ProductName)
                 .IsRequired()
                 .HasMaxLength(200);
+            
             e.Property(x => x.Description)
                 .HasMaxLength(250);
+            
             e.Property(x => x.Price)
                 .IsRequired();
         });
+        
+        // Category
+        modelBuilder.Entity<Category>(e =>
+        {
+            e.HasKey(c => c.CategoryId);
+            
+            e.Property(x => x.CategoryName)
+                .IsRequired()
+                .HasMaxLength(100);
 
+            e.Property(x => x.CategoryDescription)
+                .HasMaxLength(250);
+        });
     }
-
-    
-
 }

@@ -2,6 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ConsoleApp6.Models
 {
+    /// <summary>
+    /// Represents a single row/item in an order.
+    /// </summary>
     public class OrderRow
     {
         //PK
@@ -9,7 +12,7 @@ namespace ConsoleApp6.Models
         
         //FK
         public int OrderId { get; set; }
-        public string? ProductId { get; set; }
+        public int ProductId { get; set; }
 
         // Properties
         [Required]
