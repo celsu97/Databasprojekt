@@ -138,3 +138,4 @@
 /Users/admin/Documents/ConsoleApp6/ConsoleApp6/obj/Debug/net9.0/ConsoleApp6.pdb
 /Users/admin/Documents/ConsoleApp6/ConsoleApp6/obj/Debug/net9.0/ConsoleApp6.genruntimeconfig.cache
 /Users/admin/Documents/ConsoleApp6/ConsoleApp6/obj/Debug/net9.0/ref/ConsoleApp6.dll
+/Users/admin/Documents/ConsoleApp6/ConsoleApp6/obj/Debug/net9.0/ConsoleApp6.sourcelink.json
