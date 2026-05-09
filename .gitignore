@@ -1,0 +1,14 @@
+## .NET skräp
+[Bb]in/
+[Ob]j/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Rider/JetBrains skräp
+.idea/
+*.iws
+
+## OS skräp
+.DS_Store

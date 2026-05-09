@@ -66,7 +66,10 @@ public class ShopContext1 : DbContext
             e.Property(x => x.TotalAmount)
                 .IsRequired();
 
+
             // Relations 1 - N Orders
+            
+
             e.HasOne(o => o.Customer)
                 .WithMany(o => o.Orders)
                 .HasForeignKey(or => or.CustomerId)

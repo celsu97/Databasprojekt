@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fQEKJVmBMbo=",
+  "dgSpecHash": "Y4Vopug2oOs=",
   "success": true,
   "projectFilePath": "/Users/admin/Documents/ConsoleApp6/ConsoleApp6/ConsoleApp6.csproj",
   "expectedPackageFiles": [
@@ -54,7 +54,10 @@
     "/Users/admin/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/admin/.nuget/packages/system.text.encodings.web/9.0.11/system.text.encodings.web.9.0.11.nupkg.sha512",
     "/Users/admin/.nuget/packages/system.text.json/9.0.11/system.text.json.9.0.11.nupkg.sha512",
-    "/Users/admin/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
+    "/Users/admin/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
+    "/Users/admin/.nuget/packages/microsoft.netcore.app.ref/8.0.26/microsoft.netcore.app.ref.8.0.26.nupkg.sha512",
+    "/Users/admin/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.26/microsoft.aspnetcore.app.ref.8.0.26.nupkg.sha512",
+    "/Users/admin/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.26/microsoft.netcore.app.host.osx-arm64.8.0.26.nupkg.sha512"
   ],
   "logs": []
 }
