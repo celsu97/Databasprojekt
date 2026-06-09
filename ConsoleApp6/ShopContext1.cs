@@ -111,6 +111,11 @@ public class ShopContext1 : DbContext
             
             e.Property(x => x.Price)
                 .IsRequired();
+            
+            e.HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId)
+                .OnDelete(DeleteBehavior.SetNull);
         });
         
         // Category
