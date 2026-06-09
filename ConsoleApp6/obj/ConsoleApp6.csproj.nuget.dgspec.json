@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/admin/Documents/ConsoleApp6/ConsoleApp6/ConsoleApp6.csproj": {}
+    "/Users/admin/Documents/DatabasProj/ConsoleApp6/ConsoleApp6.csproj": {}
   },
   "projects": {
-    "/Users/admin/Documents/ConsoleApp6/ConsoleApp6/ConsoleApp6.csproj": {
+    "/Users/admin/Documents/DatabasProj/ConsoleApp6/ConsoleApp6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/admin/Documents/ConsoleApp6/ConsoleApp6/ConsoleApp6.csproj",
+        "projectUniqueName": "/Users/admin/Documents/DatabasProj/ConsoleApp6/ConsoleApp6.csproj",
         "projectName": "ConsoleApp6",
-        "projectPath": "/Users/admin/Documents/ConsoleApp6/ConsoleApp6/ConsoleApp6.csproj",
+        "projectPath": "/Users/admin/Documents/DatabasProj/ConsoleApp6/ConsoleApp6.csproj",
         "packagesPath": "/Users/admin/.nuget/packages/",
-        "outputPath": "/Users/admin/Documents/ConsoleApp6/ConsoleApp6/obj/",
+        "outputPath": "/Users/admin/Documents/DatabasProj/ConsoleApp6/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/admin/.nuget/NuGet/NuGet.Config"
@@ -46,23 +46,23 @@
           "dependencies": {
             "Microsoft.Data.Sqlite": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.11, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[9.0.11, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[8.0.11, )"
             }
           },
           "imports": [

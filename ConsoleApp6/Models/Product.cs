@@ -17,8 +17,12 @@ public class Product
     [Required, MaxLength(100)]
     public string? ProductName {get; set;}
 
+    // FK 
+    public int? CategoryId {get; set;}
+
     // Navigation ?
     public List<OrderRow> OrderRows {get; set;} = new();
+    public Category? Category {get; set;}
     
 }
 
